@@ -1,42 +1,64 @@
-# Garment Industry Productivity & Efficiency Analysis
+# RMG Production Analysis
 
-## 📌 Project Overview
-The garment industry is a high-volume, labor-intensive sector where tracking productivity is essential for operational success. This project analyzes production datasets to evaluate the performance of different teams and departments. By comparing **Actual Productivity** against **Target Productivity**, the analysis identifies specific areas of inefficiency and provides data-driven insights for management.
+A comprehensive Data Analysis project focused on the Ready-Made Garments (RMG) sector. This project provides deep insights into the production lifecycle, split across two major manufacturing phases: the **Textile Manufacturing System (TMS)** and the **Garments Manufacturing System (GMS)**. 
 
----
+By utilizing interactive dashboards and a robust data model, this project helps track efficiency, output, and quality control metrics across various factories and production lines.
 
-## 📊 Dashboard Preview
+## 📊 Data Model
 
-To showcase the analytical depth of this project, the following views were created:
+The project is built on a comprehensive relational data model (Star/Snowflake Schema) designed to handle complex manufacturing data. 
 
-### 1. Productivity Overview & Departmental Trends
-*Analysis of how different departments (Sewing vs. Finishing) meet their daily targets.*
+* **Fact Tables:** Tracks daily metrics across different stages including Yarn Store, Knitting, Fabric Inspection, Dyeing, Cutting, Production (Sewing), Finishing, Orders, and Shipments.
+* **Dimension Tables:** Provides filtering and contextual details such as Style, Factory, Date, Line, and Buyer.
 
-![Garment Analysis Overview](images/overview.jpg)
-
-### 2. Team Performance & Operational Metrics
-*Tracking individual team efficiency and the impact of variables like overtime and labor count.*
-
-![Team Performance Analysis](images/team_performance.jpg)
+![Data Model](images/data_model.jpeg)
 
 ---
 
-## 🛠️ Technical Stack
-* **Tool:** Power BI Desktop
-* [cite_start]**Data Transformation:** Power Query (ETL process to clean and normalize garment production data) [cite: 20, 22]
-* [cite_start]**Analytical Language:** DAX (Data Analysis Expressions) for custom measures [cite: 20, 23]
-* **Data Source:** Manufacturing production logs (Daily records of target vs. actual output)
+## 📈 Dashboards & Insights
+
+The analysis is divided into two primary dashboards to reflect the different stages of garment production.
+
+### 1. Garments Manufacturing System (GMS) Dashboard
+The GMS dashboard focuses on the cut-make-trim (CMT) and finishing phases of the apparel manufacturing process.
+
+**Key Metrics Tracked:**
+* Cutting Achievement (%)
+* Sewing Efficiency (%)
+* Defects per Hundred Units (DHU %)
+* Finishing Achievement (%)
+* On-Time Shipment (%)
+
+**Highlights:**
+* Year-over-year production vs. planned shipment tracking.
+* Detailed DHU analysis by individual production lines.
+* Interactive filters for Factory, Buyer, Product Category, and Gender.
+
+![GMS Dashboard](images/gms_dashboard.jpeg)
+
+### 2. Textile Manufacturing System (TMS) Dashboard
+The TMS dashboard monitors the fabric creation and preparation stages, ensuring the raw materials meet quality standards before entering the GMS phase.
+
+**Key Metrics Tracked:**
+* Knitting Efficiency (%) & Knitting Output (KG)
+* Dyeing Reprocessing Rate (%)
+* Fabric Yield (%)
+* Fabric Inspection Pass Rate (%)
+
+**Highlights:**
+* Trend analysis for knitting output over time.
+* Material tracking showing Issued vs. Received vs. Store Loss KG.
+* Quality control benchmarking (Inspection Pass Rate & Dyeing Reprocessing Rate) compared across different factory locations.
+
+![TMS Dashboard](images/tms_dashboard.jpeg)
 
 ---
 
-## 📈 Key Insights & Business Impact
-* **Efficiency Gap Identification:** Pinpointed specific departments with a consistent variance between target and actual output.
-* **Labor Optimization:** Analyzed the correlation between "No. of Workers" and "Actual Productivity" to determine optimal staffing levels.
-* **Wastage Reduction:** Visualized productivity dips to correlate them with specific garment types or production lines.
-* **Trend Analysis:** Developed a time-series view to monitor performance fluctuations across different days.
+## 🛠️ Tools Used
+* **Data Visualization & Modeling:** Power BI
+* **Data Processing:** DAX (Data Analysis Expressions) & Power Query
 
----
-
-## 🗂️ How to Use This Repository
-1. **Clone the Repo:** ```bash
-   git clone [https://github.com/sumaiyasiddique40/Garments-Industry-Analysis.git](https://github.com/sumaiyasiddique40/Garments-Industry-Analysis.git)
+## 🚀 How to Use
+1. Clone the repository: `git clone https://github.com/sumaiyasiddique40/RMG-Production-Analysis.git`
+2. Open the `.pbix` file using Microsoft Power BI Desktop.
+3. Use the slicers on the right and bottom panels of the dashboards to filter the data by Factory, Date, Buyer, or Line to explore specific insights.
